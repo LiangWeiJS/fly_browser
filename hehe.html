@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost:3000/online/download" method="post">
+        签名<input type="text" name="signature" value="$argon2id$v=19$m=65536,t=3,p=4$GgxS8BhoXo2Lg1ITzTqSQQ$UApLhLD0OB2/PB9AAaAPWzEnUyVMLFuQXULlk7G+QrY"></br>
+        游戏id<input type="text" name="gameId" value="1"></br>
+        游戏名<input type="text" name="gameTitle" value="帝王"></br>
+        脚本名称<input type="text" name="scriptName" value="帝王脚本"></br>
+        脚本描述<input type="text" name="scriptDesc" value="帝王脚本描述"></br>
+        脚本路径<input type="text" name="scriptPath" value="6b7ec295bdca9f8789337105166b8ac9a.txt"></br>
+
+        <!-- <input type="file" name="file" id=""></br> -->
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
