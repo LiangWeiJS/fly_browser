@@ -78,7 +78,7 @@ export class OnlineController {
   }
   @Post('userInfo')
   async userInfo(@Body() createOnlineDto: CreateOnlineDto) {
-    let user=await this.userEntity.findOneBy({userName:createOnlineDto.signature});
+    let user=await this.userEntity.findOneBy({signature:createOnlineDto.signature});
     if(user){
       return {
         userName:user.userName,
