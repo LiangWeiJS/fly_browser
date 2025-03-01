@@ -76,6 +76,19 @@ export class OnlineController {
       return {errorMsg:'用户不存在'};
     }
   }
+  @Post('userInfo')
+  async userInfo(@Body() createOnlineDto: CreateOnlineDto) {
+    let user=await this.userEntity.findOneBy({userName:createOnlineDto.signature});
+    if(user){
+      return {
+        userName:user.userName,
+        nickName:user.nickName,
+        signature:user.signature
+      };
+    }else{
+      return {errorMsg:'用户不存在'};
+    }
+  }
   @Post('upload')
   @UseInterceptors(
     FileInterceptor('file', {
