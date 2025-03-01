@@ -60,6 +60,10 @@ export class OnlineController {
   }
   @Post('login')
   async login(@Body() createOnlineDto: CreateOnlineDto) {
+    console.log('createOnlineDto', createOnlineDto);
+    if(!createOnlineDto.userName||!createOnlineDto.passWord){
+      return {errorMsg:'用户名或密码不能为空'};
+    }
     let user=await this.userEntity.findOneBy({userName:createOnlineDto.userName});
     if(user){
       const auth=await argon2.verify(user.passWord,createOnlineDto.passWord);
